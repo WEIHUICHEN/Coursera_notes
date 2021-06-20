@@ -12,10 +12,18 @@ DELETE FROM table_name
 WHERE condition
 ;
 
-Instructor (
-    ins_id:     unique identification number of the instructors,    
-    lastname:   last name of the instructors,
-    firstname:  first name of the instructors,
-    city:       name of the cities where instructors are located,
-    country:    two-letter country code of the countries where instructors are located
-)
+select * from employees where address = 'Elgin,IL' ;
+
+select * from employees where department = '5' and (Salary 
+
+selecet first_name, lastname, d_numer from employees group by departname_number desc and order by lastname
+
+selec
+
+SELECT F_NAME, L_NAME, DEP_NANE
+FROM EMPLOYEES,DEPARTMENTS group by DEP_NAME desc, L_
+ORDER BY DEP_ID DESC, L_NAME DESC;
+
+SELECT DEP_ID, COUNT(*) as "NUM_EMPLOYEES", AVG(SALARY) as "AVG_SALARY"
+FROM EMPLOYEES 
+GROUP BY DEP_ID having count(*) < 4 ORDER BY AVG(SALARY);
