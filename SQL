@@ -48,3 +48,7 @@ C2. select Sum(quantity) from PETRESCURE where month(rescuredate) = '05';
 C3. select sum(quantity) from PETRESCURE where day(rescuredate) = '14';
 C4. selcet (rescuredate + 3) from PETRESCURE;
 C5. select (current date - rescuredate) from PETRESCURE;
+
+# Sub-Queries
+select * from Employees where salary < (select avg(salary) from Employees);
+select emp_id, salary, (select Max(Salary) from employees) as MAX_SALARY from employees
