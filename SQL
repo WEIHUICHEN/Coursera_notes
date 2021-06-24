@@ -27,3 +27,24 @@ ORDER BY DEP_ID DESC, L_NAME DESC;
 SELECT DEP_ID, COUNT(*) as "NUM_EMPLOYEES", AVG(SALARY) as "AVG_SALARY"
 FROM EMPLOYEES 
 GROUP BY DEP_ID having count(*) < 4 ORDER BY AVG(SALARY);
+
+
+####Functions 
+1. selecet Sum(Cost) from PETRESCUE-
+2. selecet Sum(Cost) as SUM_OF_COST From PETRESCUE 
+3. select max(quantity) from PETRESCUE;
+4. select avg(Cost) from PETRESCUE-;
+5. select avg(cost/quantity) from PETRESCUE where animal = "Dog";
+
+B1. select ROUND(Cost) from PETRESCUE;
+b2. select length(name) from PETRESCUE;
+b3. select Ucase(name) from PETRESCUE;
+b4. select Ucase(distinct(name)) from PETRESCUE; --> select DISTINCT(UCASE(ANIMAL)) from PETRESCUE;
+Enter a query that displays all the columns from the PETRESCUE table, where the animal(s) rescued are cats. Use cat in lower case in the query.
+b5. select * from PETRESCUE where animal = "Cat" as "cat"  --> select * from PETRESCUE where LCASE(ANIMAL) = 'cat'
+
+C1. select Day(rescuredate) from PETRESCURE where animal ="Cat";
+C2. select Sum(quantity) from PETRESCURE where month(rescuredate) = '05';
+C3. select sum(quantity) from PETRESCURE where day(rescuredate) = '14';
+C4. selcet (rescuredate + 3) from PETRESCURE;
+C5. select (current date - rescuredate) from PETRESCURE;
