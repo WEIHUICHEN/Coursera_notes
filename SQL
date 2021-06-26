@@ -66,4 +66,6 @@ Inner Join 可以用2种方法写：
 select E.JOB_ID, E.EMP_ID,E.F_NAME from EMPLOYEES E where E.JOB_ID in (Select JOB_IDENT from JOBS where JOB_TITLE like 'Jr.%');
 在E表中没有JOB_TITLE，想要显示：
 select E.JOB_ID, E.EMP_ID,E.F_NAME,J.JOB_TITLE from EMPLOYEES E,JOBS J where E.JOB_ID = J.JOB_IDENT and E.JOB_ID in (Select JOB_IDENT from JOBS where JOB_TITLE like 'Jr.%');
-
+**SQL Aliases example
+select EMP_ID,F_NAME,L_NAME, JOB_TITLE from employees, jobs where JOB_ID = JOB_IDENT;
+select EMP_ID,F_NAME,L_NAME, JOB_TITLE from employees e, jobs j where e.JOB_ID = j.JOB_IDENT;
