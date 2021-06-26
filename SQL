@@ -60,3 +60,10 @@ Inner Join 可以用2种方法写：
     FROM table1 INNER JOIN table2
     ON table1.column_name = table2.column_name;
 2. select column_name(s) from table1, table2 where table1.column_name = table2.column_name;
+
+
+** 尝试
+select E.JOB_ID, E.EMP_ID,E.F_NAME from EMPLOYEES E where E.JOB_ID in (Select JOB_IDENT from JOBS where JOB_TITLE like 'Jr.%');
+在E表中没有JOB_TITLE，想要显示：
+select E.JOB_ID, E.EMP_ID,E.F_NAME,J.JOB_TITLE from EMPLOYEES E,JOBS J where E.JOB_ID = J.JOB_IDENT and E.JOB_ID in (Select JOB_IDENT from JOBS where JOB_TITLE like 'Jr.%');
+
