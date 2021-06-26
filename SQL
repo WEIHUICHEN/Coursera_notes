@@ -52,3 +52,11 @@ C5. select (current date - rescuredate) from PETRESCURE;
 # Sub-Queries
 select * from Employees where salary < (select avg(salary) from Employees);
 select emp_id, salary, (select Max(Salary) from employees) as MAX_SALARY from employees
+select * from EMPLOYEES where JOB_ID In (Select JOB_IDENT from JOBS); 
+  // The IN operator allows you to specify multiple values in a WHERE clause.
+  
+Inner Join 可以用2种方法写：
+1. SELECT column_name(s)
+    FROM table1 INNER JOIN table2
+    ON table1.column_name = table2.column_name;
+2. select column_name(s) from table1, table2 where table1.column_name = table2.column_name;
