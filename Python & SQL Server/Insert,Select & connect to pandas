@@ -20,7 +20,13 @@ if result:
 conn.commit()
 conn.close()
 
-
+```Python
+import pandas as pd
+selectStmt = "select * from INSTRUCTOR"
+dff = pd.read_sql(selectStmt, conn)
+print(LNAME[0]) # print the fisrt row of LNAME
+print(dff) # print all selected value
+```
 fetchone() ：
 
     返回单个的元组，也就是一条记录(row)，如果没有结果 , 则返回 None
