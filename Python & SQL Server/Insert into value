@@ -1,0 +1,21 @@
+New_Table_Name = 'INSTRUCTOR'
+# dropQuery = "drop table INSTRUCTOR"
+# dropStmt = cursor.execute(dropQuery)
+# create_table = "create table INSTRUCTOR(ID int PRIMARY KEY NOT NULL, FNAME varchar(20),LNAME varchar(20),CITY varchar(20),CCODE char(20))"
+
+
+stmt = "select TABLE_NAME from INFORMATION_SCHEMA.TABLES where TABLE_NAME = '%s'"  %New_Table_Name
+cursor.execute(stmt)
+result = cursor.fetchone()
+if result:
+    print('there is a table named {}'.format(New_Table_Name))
+else:
+    print('there are no tables named {}'.format(New_Table_Name))
+    create_table_stmt = cursor.execute(create_table)
+
+if result:
+    stmt = "insert into %s (ID,FNAME,LNAME,CITY,CCODE)Values (1,'Rav','Ahuja','TORONTO','CA'),(2,'Raul','Chong','Markham','CA'),(3,'Hima', 'Vasudevan','Chicago','US')" %New_Table_Name
+    cursor.execute(stmt)
+
+conn.commit()
+conn.close()
