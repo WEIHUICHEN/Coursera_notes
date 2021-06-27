@@ -19,3 +19,19 @@ if result:
 
 conn.commit()
 conn.close()
+
+
+fetchone() ：
+
+    返回单个的元组，也就是一条记录(row)，如果没有结果 , 则返回 None
+
+    cu.execute("select user,password from user where user='%s'" %name)
+    arr= cur.fetchone()   ----此时 通过 arr[0],arr[1]可以依次访问user,password
+
+* fetchall() ：
+
+   返回多个元组，即返回多条记录(rows),如果没有结果,则返回 ()
+
+   cur.execute("select * from user")
+
+***注意：在MySQL中是null，而在Python中则是None
