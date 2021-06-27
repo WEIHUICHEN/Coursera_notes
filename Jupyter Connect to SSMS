@@ -1,0 +1,11 @@
+## windows authentication
+import pyodbc
+cnxn = pyodbc.connect(r'Driver=SQL Server;Server=WHC;Database=SQL_Couresra;Trusted_Connection=yes;')
+cursor = cnxn.cursor()
+cursor.execute("SELECT L_NAME FROM EMPLOYEES")
+while 1:
+    row = cursor.fetchone()
+    if not row:
+        break
+    print(row.L_NAME)
+cnxn.close()
