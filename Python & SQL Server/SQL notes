@@ -1,0 +1,11 @@
+SQL column name rules:
+
+1. 
+if column names with mixed upper and lower case:
+want to retrieve Id column -> select id from xxtable (will get error) cause, SQL will read it as ID
+so use select "Id" from xxtable
+
+2.
+SQL will map " " (space) to underscore, and also "()" will also be mapped as underscores
+Ex: city name = city_name 
+ex: city(LA) = city__LA_
